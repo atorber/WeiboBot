@@ -130,7 +130,7 @@ class NetTool:
         return await self.post("https://m.weibo.cn/api/statuses/repost", params=data)
 
     async def weibo_info(self, mid: Union[str, int]) -> dict:
-        url = f"https://m.weibo.cn/detail/{mid}"
+        url = f"https://m.weibo.cn/profile/{mid}"
         r = await self.get(url, types="text")
         weibo_info = {}
         try:
