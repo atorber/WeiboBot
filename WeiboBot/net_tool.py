@@ -132,6 +132,7 @@ class NetTool:
     async def weibo_info(self, mid: Union[str, int]) -> dict:
         url = f"https://m.weibo.cn/profile/{mid}"
         r = await self.get(url, types="text")
+        print(r)
         weibo_info = {}
         try:
             weibo_info = json.loads(re.findall(r'(?<=render_data = \[)[\s\S]*(?=\]\[0\])', r)[0])[

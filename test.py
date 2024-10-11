@@ -2,10 +2,15 @@ from WeiboBot import Bot
 from WeiboBot.const import *
 import asyncio
 import logging
+from dotenv import load_dotenv
+import os
+# 加载 .env 文件中的环境变量
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 
-cookies = ''
+# 从环境变量中读取 cookies、用户名和密码
+cookies = os.getenv('WEIBO_COOKIES', '')
 
 async def main():
     try:
